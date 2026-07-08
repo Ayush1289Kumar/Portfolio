@@ -101,7 +101,7 @@ export function ScrollyCanvas({
   }
 
   return (
-    <div className="relative h-screen w-full sticky top-0 z-10 overflow-hidden bg-[#0a0a1a]">
+    <div className="relative h-[100dvh] w-full sticky top-0 z-10 overflow-hidden bg-[#0a0a1a]">
       {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center text-white/50 text-sm">
           Loading cinematic experience...
@@ -109,7 +109,7 @@ export function ScrollyCanvas({
       )}
       <canvas
         ref={canvasRef}
-        className="w-full h-full object-cover"
+        className="w-full h-full block"
       />
     </div>
   );

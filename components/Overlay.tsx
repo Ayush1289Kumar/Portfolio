@@ -102,36 +102,21 @@ export function Overlay({
         className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
       >
         {/* Eyebrow */}
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-8 md:w-12 h-[1px] bg-[#ddd0c4]/40" />
-          <p
-            className="text-xs md:text-sm tracking-[0.2em] uppercase font-medium"
-            style={{
-              fontFamily: FONT_SANS,
-              color: '#ddd0c4',
-            }}
-          >
+        <div className="flex items-center gap-2 md:gap-4 mb-4 md:mb-6 px-4">
+          <div className="h-[1px] w-6 md:w-12 bg-white/20" />
+          <span className="font-mono text-[10px] sm:text-xs md:text-sm tracking-[0.1em] md:tracking-[0.2em] text-white/80 uppercase text-center">
             Software Engineering Student
-          </p>
-          <div className="w-8 md:w-12 h-[1px] bg-[#ddd0c4]/40" />
+          </span>
+          <div className="h-[1px] w-6 md:w-12 bg-white/20" />
         </div>
 
         {/* "Ayush Kumar" — white fill + amber hairline stroke + 4-layer shadow */}
-        <h1
-          className="text-5xl md:text-7xl font-bold tracking-[-0.03em] text-center mb-4 px-4"
-          style={{
-            fontFamily: FONT_DISPLAY,
-            color: '#ffffff',
-            WebkitTextStroke: '1px rgba(217,112,48,0.5)',
-            textShadow: SHADOW_TITLE,
-          }}
-        >
+        <h1 className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-white drop-shadow-2xl mix-blend-overlay mb-6 md:mb-8 text-center px-4">
           Ayush Kumar
         </h1>
 
         {/* Tagline */}
-        <div className="flex items-center justify-center gap-3">
-
+        <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-3 flex-wrap px-4">
           {/* "Learning" — DM Serif Display, warm glow */}
           <span
             className="text-xl md:text-3xl tracking-wide"
