@@ -7,8 +7,7 @@ import { useScrollProgress } from '@/hooks/useScrollProgress';
 import { motion } from 'framer-motion';
 
 export default function Page() {
-  const { containerRef, scrollYProgress, getFrameIndex } =
-    useScrollProgress();
+  const { containerRef, scrollYProgress } = useScrollProgress();
 
   return (
     <>
@@ -18,11 +17,8 @@ export default function Page() {
         className="relative w-full"
         style={{ height: '350vh' }}
       >
-        {/* Sticky Canvas */}
-        <ScrollyCanvas
-          scrollYProgress={scrollYProgress}
-          getFrameIndex={getFrameIndex}
-        />
+        {/* Sticky Canvas Sequence */}
+        <ScrollyCanvas scrollYProgress={scrollYProgress} />
 
         {/* Scroll-driven Text Overlay */}
         <Overlay scrollYProgress={scrollYProgress} />

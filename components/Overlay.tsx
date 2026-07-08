@@ -87,9 +87,9 @@ export function Overlay({
   const philosophyOpacity = useTransform(scrollYProgress, [0.18, 0.22, 0.5, 0.52], [0, 1, 1, 0]);
   const philosophyX = useTransform(scrollYProgress, [0.18, 0.22, 0.5, 0.52], [-40, 0, 0, -40]);
 
-  // ── Strategy: 55% → 95% ──
-  const strategyOpacity = useTransform(scrollYProgress, [0.55, 0.58, 0.9, 0.95], [0, 1, 1, 0]);
-  const strategyX = useTransform(scrollYProgress, [0.55, 0.58, 0.9, 0.95], [40, 0, 0, 40]);
+  // ── Strategy: 55% → 75% ──
+  const strategyOpacity = useTransform(scrollYProgress, [0.55, 0.58, 0.75, 0.755], [0, 1, 1, 0]);
+  const strategyX = useTransform(scrollYProgress, [0.55, 0.58, 0.75, 0.755], [40, 0, 0, 0]);
 
   return (
     <motion.div
