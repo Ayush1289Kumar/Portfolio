@@ -1,30 +1,9 @@
 import localFont from 'next/font/local'
-import { JetBrains_Mono, Cormorant_Garamond } from 'next/font/google'
+import { JetBrains_Mono, DM_Serif_Display, Roboto_Mono } from 'next/font/google'
 
-export const clashDisplay = localFont({
-  src: [
-    {
-      path: '../public/fonts/clash-display/ClashDisplay-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/clash-display/ClashDisplay-Medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/clash-display/ClashDisplay-Semibold.woff2',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/clash-display/ClashDisplay-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-clash-display',
+export const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto-mono',
   display: 'swap',
 })
 
@@ -62,9 +41,10 @@ export const jetbrainsMono = JetBrains_Mono({
   weight: ['300', '400', '500', '700'],
 })
 
-export const cormorantGaramond = Cormorant_Garamond({
+export const dmSerifDisplay = DM_Serif_Display({
   subsets: ['latin'],
-  variable: '--font-cormorant-garamond',
+  variable: '--font-dm-serif-display',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
 })

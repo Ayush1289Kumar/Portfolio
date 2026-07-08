@@ -100,7 +100,9 @@ export function ScrollyCanvas({
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
 
-      ctx.scale(dpr, dpr);
+      // Use setTransform to reset the matrix before scaling — avoids
+      // accumulating dpr^n transforms across multiple resize events.
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       // Re-render after resize
       drawFrame(currentFrameRef.current);
     };
@@ -189,8 +191,11 @@ export function ScrollyCanvas({
             </div>
             <div className="w-64 h-1 bg-gray-800 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-cyan-500 to-purple-500 transition-all duration-300"
-                style={{ width: `${loadProgress}%` }}
+                className="h-full transition-all duration-300"
+                style={{
+                  width: `${loadProgress}%`,
+                  background: 'linear-gradient(to right, #d97030, #3a6abf)',
+                }}
               />
             </div>
             <div className="text-xs text-gray-400 mt-4">
@@ -200,9 +205,7 @@ export function ScrollyCanvas({
         </div>
       )}
 
-      <div className="absolute bottom-8 right-8 text-xs text-gray-500 font-mono z-20">
-        {String(currentFrameRef.current).padStart(2, '0')} / {TOTAL_SAMPLED}
-      </div>
+
     </div>
   );
 }
