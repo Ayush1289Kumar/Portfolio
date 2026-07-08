@@ -5,19 +5,19 @@ import { useState } from 'react';
 
 const projects = [
   {
-    title: 'NANO BANANA PRO',
-    description: 'Ultra-optimized multi-modal inference engine with real-time streaming.',
-    tags: ['AI', 'Performance', 'Infrastructure'],
+    title: 'PORTFOLIO V0',
+    description: 'Interactive scroll-driven portfolio with WebP frame sequences, Framer Motion animations, and a cinematic dark theme.',
+    tags: ['Next.js', 'Framer Motion', 'Tailwind CSS'],
   },
   {
-    title: 'KAIJU ENGINE v7',
-    description: 'Next-generation physics simulation framework for interactive 3D environments.',
-    tags: ['3D', 'Physics', 'WebGL'],
+    title: 'DSA PRACTICE HUB',
+    description: 'Curated collection of Data Structures & Algorithms solutions with detailed explanations and complexity analysis.',
+    tags: ['Python', 'Java', 'Algorithms'],
   },
   {
-    title: 'SYNAPSE PROTOCOL',
-    description: 'Distributed neural network protocol for edge-based machine learning.',
-    tags: ['ML', 'Distributed', 'Edge'],
+    title: 'VIBE CODING LAB',
+    description: 'Experimental projects exploring the intersection of AI-assisted development and creative software engineering.',
+    tags: ['AI', 'Web Dev', 'Experimental'],
   },
 ];
 

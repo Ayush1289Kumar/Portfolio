@@ -66,11 +66,18 @@ export function Overlay({
         style={{ opacity: heroOpacity, y: heroY, visibility: heroVisibility }}
         className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
       >
-        <h1 className="font-display text-7xl font-extrabold tracking-[-0.02em] text-white mb-4 text-center">
+        <h1 className="font-display text-7xl font-bold tracking-[-0.03em] text-white mb-4 text-center">
           Ayush Kumar
         </h1>
-        <p className="font-sans text-xl font-light text-gray-300 tracking-wide">
-          Creative Developer & Digital Architect
+
+        <div className="flex items-center justify-center gap-4 text-white mb-6">
+          <span className="font-serif text-3xl md:text-6xl">Learning</span>
+          <span className="font-display text-3xl md:text-6xl">Building</span>
+          <span className="font-mono text-3xl md:text-6xl">Documenting</span>
+        </div>
+
+        <p className="font-sans text-xl font-light text-gray-300">
+          Software Engineering Student
         </p>
       </motion.div>
 
@@ -84,10 +91,10 @@ export function Overlay({
       >
         <div className="max-w-md ml-[5%]">
           <p className="font-mono text-sm text-cyan-400 mb-4 tracking-[0.15em]">
-            01 // PHILOSOPHY
+            01 PHILOSOPHY
           </p>
-          <h2 className="font-display text-4xl font-bold text-white leading-tight">
-            I build hyper-performance digital experiences.
+          <h2 className="font-display text-4xl font-semibold text-white leading-tight">
+            I believe discipline compounds faster than talent.
           </h2>
         </div>
       </motion.div>
@@ -102,10 +109,10 @@ export function Overlay({
       >
         <div className="max-w-md mr-[5%] text-right">
           <p className="font-mono text-sm text-purple-400 mb-4 tracking-[0.15em]">
-            02 // STRATEGY
+            02 STRATEGY
           </p>
-          <h2 className="font-display text-4xl font-bold text-white leading-tight">
-            Bridging radical design systems and engineering logic.
+          <h2 className="font-display text-4xl font-semibold text-white leading-tight">
+            Combining engineering, storytelling, and continuous learning to build a meaningful life.
           </h2>
         </div>
       </motion.div>

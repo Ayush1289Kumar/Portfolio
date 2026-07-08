@@ -1,17 +1,58 @@
-import { Syne, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
+import { JetBrains_Mono, Cormorant_Garamond } from 'next/font/google'
 
-export const syne = Syne({
-  subsets: ['latin'],
-  variable: '--font-syne',
+export const clashDisplay = localFont({
+  src: [
+    {
+      path: '../public/fonts/clash-display/ClashDisplay-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/clash-display/ClashDisplay-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/clash-display/ClashDisplay-Semibold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/clash-display/ClashDisplay-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-clash-display',
   display: 'swap',
-  weight: ['400', '600', '700', '800'],
 })
 
-export const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
+export const satoshi = localFont({
+  src: [
+    {
+      path: '../public/fonts/satoshi/Satoshi-Light.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/satoshi/Satoshi-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/satoshi/Satoshi-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/satoshi/Satoshi-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-satoshi',
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
 })
 
 export const jetbrainsMono = JetBrains_Mono({
@@ -19,4 +60,11 @@ export const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
   display: 'swap',
   weight: ['300', '400', '500', '700'],
+})
+
+export const cormorantGaramond = Cormorant_Garamond({
+  subsets: ['latin'],
+  variable: '--font-cormorant-garamond',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
 })

@@ -284,13 +284,13 @@ SECTION 8: CONTACT
 
   Links
 
-    GitHub      → Placeholder
+    GitHub      → https://github.com/Ayush1289Kumar
 
-    LinkedIn    → Placeholder
+    LinkedIn    → https://www.linkedin.com/in/ayush-kumar-806371377/
 
-    Instagram   → Placeholder
+    Instagram   → https://www.instagram.com/takusan_ayaso/
 
-    Email       → Placeholder
+    Email       → takusanayaso1289@gmail.com
 
 ═══════════════════════════════════════════════════════════════
 SECTION 9: FOOTER
