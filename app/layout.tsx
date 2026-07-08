@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { robotoMono, satoshi, jetbrainsMono, dmSerifDisplay } from '@/lib/fonts'
+import { robotoMono, satoshi, jetbrainsMono, dmSerifDisplay } from '@/lib/fonts';
 import './globals.css'
 
 export const metadata: Metadata = {

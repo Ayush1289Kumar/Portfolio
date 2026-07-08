@@ -16,7 +16,7 @@ export default function Page() {
       <div
         ref={containerRef}
         className="relative w-full"
-        style={{ height: '650vh' }}
+        style={{ height: '350vh' }}
       >
         {/* Sticky Canvas */}
         <ScrollyCanvas

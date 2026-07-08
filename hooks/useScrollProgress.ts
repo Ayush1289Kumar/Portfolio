@@ -1,16 +1,23 @@
 'use client';
 
-import { useScroll, MotionValue } from 'framer-motion';
+import { useScroll, useSpring, MotionValue } from 'framer-motion';
 import { useRef } from 'react';
 
-const TOTAL_FRAMES = 30;
+const TOTAL_FRAMES = 100;
 
 export function useScrollProgress() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: rawProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end end'],
+  });
+
+  // Apply a spring physics model to the scroll to smooth out mouse wheels and trackpads
+  const scrollYProgress = useSpring(rawProgress, {
+    stiffness: 200,   // High stiffness so it doesn't lag too far behind
+    damping: 40,      // High damping so it settles quickly without bouncing
+    restDelta: 0.001
   });
 
   const getFrameIndex = (progress: number) =>

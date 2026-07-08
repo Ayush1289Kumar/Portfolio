@@ -98,9 +98,24 @@ export function Overlay({
     >
       {/* ── Hero ── */}
       <motion.div
-        style={{ opacity: heroOpacity, y: heroY, visibility: heroVisibility }}
+        style={{ opacity: heroOpacity, y: heroY }}
         className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
       >
+        {/* Eyebrow */}
+        <div className="flex items-center gap-4 mb-4">
+          <div className="w-8 md:w-12 h-[1px] bg-[#ddd0c4]/40" />
+          <p
+            className="text-xs md:text-sm tracking-[0.2em] uppercase font-medium"
+            style={{
+              fontFamily: FONT_SANS,
+              color: '#ddd0c4',
+            }}
+          >
+            Software Engineering Student
+          </p>
+          <div className="w-8 md:w-12 h-[1px] bg-[#ddd0c4]/40" />
+        </div>
+
         {/* "Ayush Kumar" — white fill + amber hairline stroke + 4-layer shadow */}
         <h1
           className="text-7xl font-bold tracking-[-0.03em] text-center mb-4"
@@ -115,7 +130,7 @@ export function Overlay({
         </h1>
 
         {/* Tagline */}
-        <div className="flex items-center justify-center gap-3 mb-7">
+        <div className="flex items-center justify-center gap-3">
 
           {/* "Learning" — DM Serif Display, warm glow */}
           <span
@@ -175,18 +190,6 @@ export function Overlay({
             Documenting
           </span>
         </div>
-
-        {/* Subtitle */}
-        <p
-          className="text-xl font-light"
-          style={{
-            fontFamily: FONT_SANS,
-            color: '#ddd0c4',
-            textShadow: SHADOW_SUBTITLE,
-          }}
-        >
-          Software Engineering Student
-        </p>
       </motion.div>
 
       {/* ── Philosophy ── */}
@@ -206,10 +209,11 @@ export function Overlay({
             01 PHILOSOPHY
           </p>
           <h2
-            className="text-4xl font-semibold text-white leading-tight text-balance"
+            className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] leading-tight text-balance"
             style={{
               fontFamily: FONT_DISPLAY,
-              textShadow: SHADOW_PHILOSOPHY_HEADING,
+              /* We add a filter drop-shadow to apply glow to gradient text without breaking the bg-clip */
+              filter: 'drop-shadow(0px 0px 20px rgba(240,136,72,0.4))',
             }}
           >
             I believe discipline compounds faster than talent.
@@ -234,10 +238,10 @@ export function Overlay({
             02 STRATEGY
           </p>
           <h2
-            className="text-3xl md:text-4xl font-semibold text-white leading-tight text-balance"
+            className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-50 to-[#8cb4ff] leading-tight text-balance"
             style={{
               fontFamily: FONT_DISPLAY,
-              textShadow: SHADOW_STRATEGY_HEADING,
+              filter: 'drop-shadow(0px 0px 20px rgba(140,180,255,0.4))',
             }}
           >
             Combining engineering, storytelling, and continuous learning to build a meaningful life.

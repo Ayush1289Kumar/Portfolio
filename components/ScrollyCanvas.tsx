@@ -10,7 +10,7 @@ interface CanvasState {
   dpr: number;
 }
 
-const TOTAL_SAMPLED = 30;
+const TOTAL_SAMPLED = 100;
 
 export function ScrollyCanvas({
   scrollYProgress,
