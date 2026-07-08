@@ -199,30 +199,6 @@ export function ScrollyCanvas({
         className="h-full w-full"
         style={{ imageRendering: 'crisp-edges' }}
       />
-
-      {isPreloading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-          <div className="text-center">
-            <div className="text-sm font-light text-gray-300 mb-4">
-              Loading Frames
-            </div>
-            <div className="w-64 h-1 bg-gray-800 rounded-full overflow-hidden">
-              <div
-                className="h-full transition-all duration-300"
-                style={{
-                  width: `${loadProgress}%`,
-                  background: 'linear-gradient(to right, #d97030, #3a6abf)',
-                }}
-              />
-            </div>
-            <div className="text-xs text-gray-400 mt-4">
-              {Math.round(loadProgress)}%
-            </div>
-          </div>
-        </div>
-      )}
-
-
     </div>
   );
 }
