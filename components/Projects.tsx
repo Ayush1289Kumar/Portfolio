@@ -50,7 +50,7 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-display text-5xl font-light text-white mb-4"
+            className="font-display text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] mb-4 pb-2"
           >
             Featured Projects
           </motion.h2>

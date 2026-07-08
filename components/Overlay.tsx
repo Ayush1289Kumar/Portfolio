@@ -209,7 +209,7 @@ export function Overlay({
             01 PHILOSOPHY
           </p>
           <h2
-            className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] leading-tight text-balance"
+            className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] leading-tight text-balance pb-2"
             style={{
               fontFamily: FONT_DISPLAY,
               /* We add a filter drop-shadow to apply glow to gradient text without breaking the bg-clip */
@@ -238,7 +238,7 @@ export function Overlay({
             02 STRATEGY
           </p>
           <h2
-            className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-50 to-[#8cb4ff] leading-tight text-balance"
+            className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-50 to-[#8cb4ff] leading-tight text-balance pb-2"
             style={{
               fontFamily: FONT_DISPLAY,
               filter: 'drop-shadow(0px 0px 20px rgba(140,180,255,0.4))',

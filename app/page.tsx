@@ -48,7 +48,7 @@ export default function Page() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-4xl font-semibold text-white mb-8"
+              className="font-display text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] mb-8 pb-2"
             >
               Who I Am
             </motion.h2>
@@ -60,7 +60,7 @@ export default function Page() {
               className="font-sans text-lg leading-relaxed"
               style={{ color: '#c8bdb0' }}
             >
-              I'm a Software Engineering student driven by curiosity and disciplined learning. Beyond writing code, I'm fascinated by the intersection of technology, philosophy, fitness, and personal growth. I enjoy building projects, exploring new technologies, and documenting my journey—not because I've reached the destination, but because I believe the process itself is worth sharing.
+              I'm a Software Engineering student driven by curiosity and disciplined learning. Beyond writing code, I'm fascinated by the intersection of technology, philosophy, fitness, and personal growth. I enjoy building projects, exploring new technologies, and documenting my journey, not because I've reached the destination, but because I believe the process itself is worth sharing.
             </motion.p>
           </div>
         </div>
@@ -155,7 +155,7 @@ export default function Page() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl font-semibold text-white mb-12"
+            className="font-display text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] mb-12 pb-2"
           >
             What I'm Working On
           </motion.h2>
@@ -199,7 +199,7 @@ export default function Page() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-display text-5xl font-semibold text-white mb-6"
+            className="font-display text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-50 to-[#8cb4ff] mb-6 pb-2"
           >
             Let's Build Something Together
           </motion.h2>
@@ -219,7 +219,7 @@ export default function Page() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-8"
+            className="flex flex-wrap justify-center gap-8 group"
           >
             {[
               { name: 'GitHub', href: 'https://github.com/Ayush1289Kumar' },
@@ -232,10 +232,7 @@ export default function Page() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-sm tracking-[0.05em] transition-colors duration-300"
-                style={{ color: '#8a7a6a' }}
-                onMouseEnter={e => (e.currentTarget.style.color = '#d97030')}
-                onMouseLeave={e => (e.currentTarget.style.color = '#8a7a6a')}
+                className="font-mono text-sm tracking-[0.05em] transition-all duration-300 text-[#6a5a4a] group-hover:blur-[2px] group-hover:opacity-40 hover:!blur-none hover:!opacity-100 hover:!text-[#d97030] hover:scale-110 drop-shadow-none hover:drop-shadow-[0_0_8px_rgba(217,112,48,0.8)]"
               >
                 {link.name}
               </a>
@@ -256,7 +253,7 @@ export default function Page() {
                 Software Engineering Student
               </p>
             </div>
-            <div className="flex gap-8">
+            <div className="flex gap-8 group">
               {[
                 { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar' },
                 { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ayush-kumar-806371377/' },
@@ -268,10 +265,7 @@ export default function Page() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-sm transition-colors duration-300"
-                  style={{ color: '#6a5a4a' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = '#e8ddd0')}
-                  onMouseLeave={e => (e.currentTarget.style.color = '#6a5a4a')}
+                  className="font-mono text-sm tracking-[0.05em] transition-all duration-300 text-[#6a5a4a] group-hover:blur-[2px] group-hover:opacity-40 hover:!blur-none hover:!opacity-100 hover:!text-[#d97030] hover:scale-110 drop-shadow-none hover:drop-shadow-[0_0_8px_rgba(217,112,48,0.8)]"
                 >
                   {link.label}
                 </a>
