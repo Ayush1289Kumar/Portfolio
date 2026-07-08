@@ -1,0 +1,188 @@
+═══════════════════════════════════════════════════════════════
+  WEBSITE TEXT INVENTORY & FONT REFERENCE
+  Ayush Kumar — Creative Developer & Digital Architect
+═══════════════════════════════════════════════════════════════
+
+FONT SYSTEM
+────────────
+  Utility Class   Font Name        CSS Variable            Weights Available
+  ─────────────   ──────────       ────────────            ─────────────────
+  font-sans       Space Grotesk    --font-space-grotesk    300, 400, 500, 600, 700
+  font-display    Syne             --font-syne             400, 600, 700, 800
+  font-mono       JetBrains Mono   --font-jetbrains-mono   300, 400, 500, 700
+
+  Default body font: Space Grotesk (font-sans), antialiased, text-gray-100 (#e0e0e0)
+
+═══════════════════════════════════════════════════════════════
+SECTION 1: HERO (Overlay.tsx — scroll progress 0%–15%)
+═══════════════════════════════════════════════════════════════
+
+  "Ayush Kumar"
+    Font:  Syne (font-display)
+    Size:  text-7xl
+    Weight: font-extrabold (800)
+    Color:  text-white
+    Tracking: tracking-[-0.02em]
+    Align:  text-center
+
+  "Creative Developer & Digital Architect"
+    Font:  Space Grotesk (font-sans)
+    Size:  text-xl
+    Weight: font-light (300)
+    Color:  text-gray-300
+    Tracking: tracking-wide
+
+═══════════════════════════════════════════════════════════════
+SECTION 2: PHILOSOPHY (Overlay.tsx — scroll progress 18%–52%)
+═══════════════════════════════════════════════════════════════
+
+  "01 // PHILOSOPHY"
+    Font:  JetBrains Mono (font-mono)
+    Size:  text-sm
+    Color:  text-cyan-400
+    Tracking: tracking-[0.15em]
+
+  "I build hyper-performance digital experiences."
+    Font:  Syne (font-display)
+    Size:  text-4xl
+    Weight: font-bold (700)
+    Color:  text-white
+    Leading: leading-tight
+
+═══════════════════════════════════════════════════════════════
+SECTION 3: STRATEGY (Overlay.tsx — scroll progress 55%–95%)
+═══════════════════════════════════════════════════════════════
+
+  "02 // STRATEGY"
+    Font:  JetBrains Mono (font-mono)
+    Size:  text-sm
+    Color:  text-purple-400
+    Tracking: tracking-[0.15em]
+
+  "Bridging radical design systems and engineering logic."
+    Font:  Syne (font-display)
+    Size:  text-4xl
+    Weight: font-bold (700)
+    Color:  text-white
+    Leading: leading-tight
+
+═══════════════════════════════════════════════════════════════
+SECTION 4: FEATURED PROJECTS (Projects.tsx — below scroll section)
+═══════════════════════════════════════════════════════════════
+
+  "Featured Projects"
+    Font:  Syne (font-display)
+    Size:  text-5xl
+    Weight: font-light (300)
+    Color:  text-white
+    Motion:  fade-in + slide-up via framer-motion
+
+  Underline accent:  w-16 h-px bg-gradient-to-r from-cyan-500 to-transparent
+
+  ── CARD 1: "NANO BANANA PRO" ──
+
+    Title:
+      "NANO BANANA PRO"
+      Font:   Syne (font-display)
+      Size:   text-xl
+      Weight: font-light (300)
+      Color:  text-white
+      Tracking: tracking-wide
+
+    Description:
+      "Ultra-optimized multi-modal inference engine with real-time streaming."
+      Font:   Space Grotesk (font-sans)
+      Size:   text-sm
+      Color:  text-gray-400
+      Leading: leading-relaxed
+
+    Tags (3):
+      "AI"          }  Font:   JetBrains Mono (font-mono)
+      "Performance" }  Size:   text-xs
+      "Infrastructure"} Color:  text-gray-300
+                      Background: bg-white/5
+                      Border:     border-white/[0.06]
+                      Shape:      rounded-full px-3 py-1
+
+  ── CARD 2: "KAIJU ENGINE v7" ──
+
+    Title:
+      "KAIJU ENGINE v7"
+      Font:   Syne (font-display)
+      Size:   text-xl
+      Weight: font-light (300)
+      Color:  text-white
+      Tracking: tracking-wide
+
+    Description:
+      "Next-generation physics simulation framework for interactive 3D environments."
+      Font:   Space Grotesk (font-sans)
+      Size:   text-sm
+      Color:  text-gray-400
+      Leading: leading-relaxed
+
+    Tags (3):
+      "3D"     }  Font:   JetBrains Mono (font-mono)
+      "Physics" }  Size:   text-xs
+      "WebGL"  }  Color:  text-gray-300
+
+  ── CARD 3: "SYNAPSE PROTOCOL" ──
+
+    Title:
+      "SYNAPSE PROTOCOL"
+      Font:   Syne (font-display)
+      Size:   text-xl
+      Weight: font-light (300)
+      Color:  text-white
+      Tracking: tracking-wide
+
+    Description:
+      "Distributed neural network protocol for edge-based machine learning."
+      Font:   Space Grotesk (font-sans)
+      Size:   text-sm
+      Color:  text-gray-400
+      Leading: leading-relaxed
+
+    Tags (3):
+      "ML"          }  Font:   JetBrains Mono (font-mono)
+      "Distributed" }  Size:   text-xs
+      "Edge"        }  Color:  text-gray-300
+
+═══════════════════════════════════════════════════════════════
+SECTION 5: FOOTER (page.tsx)
+═══════════════════════════════════════════════════════════════
+
+  "AYUSH KUMAR"
+    Font:  JetBrains Mono (font-mono)
+    Size:  text-sm
+    Color:  text-cyan-400
+
+  "Creative Developer & Digital Architect"
+    Font:  Space Grotesk (font-sans)
+    Size:  text-xs
+    Color:  text-gray-400
+
+  Navigation Links:
+    "GitHub"   }  Font: system sans-serif (no Tailwind font class)
+    "Twitter"  }  Size: text-sm
+    "Email"    }  Color: text-gray-400 → hover:text-white
+                Transition: transition-colors
+
+  Copyright:
+    "© 2025 Ayush Kumar. All rights reserved."
+    Font:  system sans-serif (inherited)
+    Size:  text-xs
+    Color:  text-gray-500
+    Align:  text-center
+
+═══════════════════════════════════════════════════════════════
+PAGE META (layout.tsx — not rendered on page body, for reference)
+═══════════════════════════════════════════════════════════════
+
+  <head> title:  "Ayush Kumar — Creative Developer & Digital Architect"
+  <head> description:  "Hyper-performance digital experiences with radical design
+                        and engineering logic."
+
+═══════════════════════════════════════════════════════════════
+  END OF INVENTORY
+═══════════════════════════════════════════════════════════════

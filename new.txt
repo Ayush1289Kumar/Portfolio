@@ -1,0 +1,354 @@
+═══════════════════════════════════════════════════════════════
+  WEBSITE TEXT INVENTORY & FONT REFERENCE
+  Ayush Kumar — Software Engineering Student
+═══════════════════════════════════════════════════════════════
+
+FONT SYSTEM
+────────────
+  Utility Class   Font Name              CSS Variable               Weights Available
+  ─────────────   ──────────────         ───────────────────        ─────────────────
+  font-display    Clash Display          --font-clash-display       400,500,600,700
+  font-sans       Satoshi                --font-satoshi             300,400,500,700
+  font-mono       JetBrains Mono         --font-jetbrains-mono      300,400,500,700
+
+  Hero Special Fonts
+  ───────────────────────────────────────────────────────────
+  Learning      → Cormorant Garamond
+  Building      → Clash Display
+  Documenting   → JetBrains Mono
+
+  Default body font:
+  Satoshi (font-sans), antialiased, text-gray-100 (#e0e0e0)
+
+═══════════════════════════════════════════════════════════════
+SECTION 1: HERO (Overlay.tsx — scroll progress 0%–15%)
+═══════════════════════════════════════════════════════════════
+
+  "Ayush Kumar"
+
+    Font:
+      Clash Display (font-display)
+
+    Size:
+      text-7xl
+
+    Weight:
+      font-bold
+
+    Color:
+      text-white
+
+    Tracking:
+      tracking-[-0.03em]
+
+    Align:
+      text-center
+
+
+  Main Heading
+
+      "Learning"
+
+        Font:
+          Cormorant Garamond
+
+      "Building"
+
+        Font:
+          Clash Display
+
+      "Documenting"
+
+        Font:
+          JetBrains Mono
+
+    Layout:
+      Horizontal
+      Learning — Building — Documenting
+
+    Color:
+      text-white
+
+    Size:
+      Responsive (text-3xl → text-6xl)
+
+
+  Subtitle
+
+      "Software Engineering Student"
+
+    Font:
+      Satoshi
+
+    Size:
+      text-xl
+
+    Weight:
+      font-light
+
+    Color:
+      text-gray-300
+
+═══════════════════════════════════════════════════════════════
+SECTION 2: PHILOSOPHY (Overlay.tsx — scroll progress 18%–52%)
+═══════════════════════════════════════════════════════════════
+
+  "01 // PHILOSOPHY"
+
+    Font:
+      JetBrains Mono
+
+    Size:
+      text-sm
+
+    Color:
+      text-cyan-400
+
+    Tracking:
+      tracking-[0.15em]
+
+
+  Quote
+
+    "I believe discipline compounds faster than talent."
+
+    Font:
+      Clash Display
+
+    Size:
+      text-4xl
+
+    Weight:
+      font-semibold
+
+    Color:
+      text-white
+
+    Leading:
+      leading-tight
+
+═══════════════════════════════════════════════════════════════
+SECTION 3: STRATEGY (Overlay.tsx — scroll progress 55%–95%)
+═══════════════════════════════════════════════════════════════
+
+  "02 // STRATEGY"
+
+    Font:
+      JetBrains Mono
+
+    Size:
+      text-sm
+
+    Color:
+      text-purple-400
+
+    Tracking:
+      tracking-[0.15em]
+
+
+  Statement
+
+    "Combining engineering, storytelling, and continuous learning to build a meaningful life."
+
+    Font:
+      Clash Display
+
+    Size:
+      text-4xl
+
+    Weight:
+      font-semibold
+
+    Color:
+      text-white
+
+═══════════════════════════════════════════════════════════════
+SECTION 4: ABOUT
+═══════════════════════════════════════════════════════════════
+
+  "03 // ABOUT"
+
+    Font:
+      JetBrains Mono
+
+    Color:
+      text-cyan-400
+
+
+  Heading
+
+    "Who I Am"
+
+    Font:
+      Clash Display
+
+    Size:
+      text-5xl
+
+    Weight:
+      font-semibold
+
+
+  Description
+
+    "I'm a Software Engineering student driven by curiosity and disciplined learning. Beyond writing code, I'm fascinated by the intersection of technology, philosophy, fitness, and personal growth. I enjoy building projects, exploring new technologies, and documenting my journey—not because I've reached the destination, but because I believe the process itself is worth sharing."
+
+    Font:
+      Satoshi
+
+    Size:
+      text-lg
+
+    Color:
+      text-gray-300
+
+    Leading:
+      leading-relaxed
+
+═══════════════════════════════════════════════════════════════
+SECTION 5: SKILLS
+═══════════════════════════════════════════════════════════════
+
+  "04 // SKILLS"
+
+Languages
+
+  • Python
+  • Java
+  • C
+
+Tools
+
+  • Git
+  • GitHub
+  • VS Code
+  • AI Tools
+
+Currently Exploring
+
+  • Data Structures & Algorithms
+  • Web Development
+  • Vibe Coding
+
+═══════════════════════════════════════════════════════════════
+SECTION 6: CURRENT FOCUS
+═══════════════════════════════════════════════════════════════
+
+  "05 // CURRENT FOCUS"
+
+  Heading
+
+    "What I'm Working On"
+
+  Items
+
+    • Mastering Data Structures & Algorithms
+
+    • Exploring Full-Stack Web Development
+
+    • Building meaningful software projects
+
+    • Creating educational content around programming and self-improvement
+
+═══════════════════════════════════════════════════════════════
+SECTION 7: FEATURED PROJECTS
+═══════════════════════════════════════════════════════════════
+
+  "Featured Projects"
+
+    Font:
+      Clash Display
+
+    Size:
+      text-5xl
+
+    Weight:
+      font-light
+
+    Color:
+      text-white
+
+  (Replace with actual projects later.)
+
+═══════════════════════════════════════════════════════════════
+SECTION 8: CONTACT
+═══════════════════════════════════════════════════════════════
+
+  Heading
+
+    "Let's Build Something Together"
+
+  Description
+
+    "Whether it's collaboration, opportunities, or simply discussing ideas, my inbox is always open."
+
+  Links
+
+    GitHub      → Placeholder
+
+    LinkedIn    → Placeholder
+
+    Instagram   → Placeholder
+
+    Email       → Placeholder
+
+═══════════════════════════════════════════════════════════════
+SECTION 9: FOOTER
+═══════════════════════════════════════════════════════════════
+
+  "AYUSH KUMAR"
+
+    Font:
+      JetBrains Mono
+
+    Size:
+      text-sm
+
+    Color:
+      text-cyan-400
+
+
+  "Software Engineering Student"
+
+    Font:
+      Satoshi
+
+    Size:
+      text-xs
+
+    Color:
+      text-gray-400
+
+
+  Navigation
+
+    GitHub
+
+    LinkedIn
+
+    Instagram
+
+    Email
+
+
+  Copyright
+
+    © 2026 Ayush Kumar. All rights reserved.
+
+═══════════════════════════════════════════════════════════════
+PAGE META (layout.tsx)
+═══════════════════════════════════════════════════════════════
+
+<head>
+
+Title
+
+"Taku | Software Engineering Student"
+
+Description
+
+"Software Engineering student passionate about programming, technology, philosophy, and continuous learning. Building meaningful projects while documenting the journey."
+
+═══════════════════════════════════════════════════════════════
+END OF INVENTORY
+═══════════════════════════════════════════════════════════════
