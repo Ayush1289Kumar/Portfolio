@@ -25,7 +25,7 @@ export function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative z-0 overflow-hidden px-8 py-24">
+    <section className="relative z-0 overflow-hidden px-6 md:px-8 py-16 md:py-24">
       {/* Background — amber-warm toned */}
       <div
         className="absolute inset-0"
@@ -50,7 +50,7 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-display text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] mb-4 pb-2"
+            className="font-display text-4xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] mb-4 pb-2"
           >
             Featured Projects
           </motion.h2>

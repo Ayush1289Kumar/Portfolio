@@ -29,7 +29,7 @@ export default function Page() {
       </div>
 
       {/* About Me Section */}
-      <section className="relative z-0 overflow-hidden px-8 py-12">
+      <section className="relative z-0 overflow-hidden px-6 md:px-8 py-12">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0e0b16] via-[#130f1a] to-[#1a1208]" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="max-w-3xl">
@@ -48,7 +48,7 @@ export default function Page() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] mb-8 pb-2"
+              className="font-display text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] mb-8 pb-2"
             >
               Who I Am
             </motion.h2>
@@ -67,7 +67,7 @@ export default function Page() {
       </section>
 
       {/* Skills Section */}
-      <section className="relative z-0 overflow-hidden px-8 py-12">
+      <section className="relative z-0 overflow-hidden px-6 md:px-8 py-12">
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1208] via-[#2a1a0e] to-[#1a1520]" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <motion.p
@@ -137,7 +137,7 @@ export default function Page() {
       </section>
 
       {/* Current Focus Section */}
-      <section className="relative z-0 overflow-hidden px-8 py-12">
+      <section className="relative z-0 overflow-hidden px-6 md:px-8 py-12">
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1520] via-[#0d1526] to-[#0e0b16]" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <motion.p
@@ -155,7 +155,7 @@ export default function Page() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] mb-12 pb-2"
+            className="font-display text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] mb-12 pb-2"
           >
             What I'm Working On
           </motion.h2>
@@ -191,7 +191,7 @@ export default function Page() {
       <Projects />
 
       {/* Contact Section */}
-      <section className="relative z-0 overflow-hidden px-8 py-12">
+      <section className="relative z-0 overflow-hidden px-6 md:px-8 py-12">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0e0b16] via-[#1a1520] to-black" />
         <div className="relative z-10 max-w-7xl mx-auto text-center">
           <motion.h2
@@ -199,7 +199,7 @@ export default function Page() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-display text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-50 to-[#8cb4ff] mb-6 pb-2"
+            className="font-display text-4xl md:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-50 to-[#8cb4ff] mb-6 pb-2"
           >
             Let's Build Something Together
           </motion.h2>
@@ -242,7 +242,7 @@ export default function Page() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-0 bg-black border-t px-8 py-12" style={{ borderColor: 'rgba(217,112,48,0.08)' }}>
+      <footer className="relative z-0 bg-black border-t px-6 md:px-8 py-12" style={{ borderColor: 'rgba(217,112,48,0.08)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
@@ -253,7 +253,7 @@ export default function Page() {
                 Software Engineering Student
               </p>
             </div>
-            <div className="flex gap-8 group">
+            <div className="flex flex-wrap justify-center gap-6 md:gap-8 group">
               {[
                 { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar' },
                 { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ayush-kumar-806371377/' },

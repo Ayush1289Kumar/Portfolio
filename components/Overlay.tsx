@@ -118,7 +118,7 @@ export function Overlay({
 
         {/* "Ayush Kumar" — white fill + amber hairline stroke + 4-layer shadow */}
         <h1
-          className="text-7xl font-bold tracking-[-0.03em] text-center mb-4"
+          className="text-5xl md:text-7xl font-bold tracking-[-0.03em] text-center mb-4 px-4"
           style={{
             fontFamily: FONT_DISPLAY,
             color: '#ffffff',
@@ -197,7 +197,7 @@ export function Overlay({
         style={{ opacity: philosophyOpacity, x: philosophyX }}
         className="absolute inset-0 flex items-center pointer-events-none"
       >
-        <div className="max-w-3xl ml-[5%]">
+        <div className="max-w-3xl px-6 md:px-0 md:ml-[10%]">
           <p
             className="text-sm mb-4 tracking-[0.15em]"
             style={{
@@ -209,7 +209,7 @@ export function Overlay({
             01 PHILOSOPHY
           </p>
           <h2
-            className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] leading-tight text-balance pb-2"
+            className="text-2xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-50 to-[#f08848] leading-tight text-balance pb-2"
             style={{
               fontFamily: FONT_DISPLAY,
               /* We add a filter drop-shadow to apply glow to gradient text without breaking the bg-clip */
@@ -226,7 +226,7 @@ export function Overlay({
         style={{ opacity: strategyOpacity, x: strategyX }}
         className="absolute inset-0 flex items-center justify-end pointer-events-none"
       >
-        <div className="max-w-2xl mr-[5%] text-right">
+        <div className="max-w-2xl px-6 md:px-0 md:mr-[10%] text-right">
           <p
             className="text-sm mb-4 tracking-[0.15em]"
             style={{
@@ -238,7 +238,7 @@ export function Overlay({
             02 STRATEGY
           </p>
           <h2
-            className="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-50 to-[#8cb4ff] leading-tight text-balance pb-2"
+            className="text-2xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-50 to-[#8cb4ff] leading-tight text-balance pb-2"
             style={{
               fontFamily: FONT_DISPLAY,
               filter: 'drop-shadow(0px 0px 20px rgba(140,180,255,0.4))',
