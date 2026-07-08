@@ -32,45 +32,62 @@ export function ScrollyCanvas({
   const lastFrameRef = useRef(-1);
   const currentFrameRef = useRef(0);
 
-  // Preload 30 sampled frames
+  // Prioritize first frame to unblock UI instantly, then load the rest
   useEffect(() => {
     let isMounted = true;
     let loadedCount = 0;
+    const images: HTMLImageElement[] = new Array(TOTAL_SAMPLED);
 
-    const images: HTMLImageElement[] = [];
+    const loadRemainingFrames = () => {
+      for (let i = 1; i < TOTAL_SAMPLED; i++) {
+        const sourceFrame = Math.round((i / TOTAL_SAMPLED) * 199);
+        const frameNum = String(sourceFrame).padStart(3, '0');
+        const img = new Image();
+        img.src = `/split_frames/frame_${frameNum}_delay-0.05s.webp`;
+        img.crossOrigin = 'anonymous';
 
-    for (let i = 0; i < TOTAL_SAMPLED; i++) {
-      const sourceFrame = Math.round((i / TOTAL_SAMPLED) * 199);
-      const frameNum = String(sourceFrame).padStart(3, '0');
-      const img = new Image();
-      img.src = `/split_frames/frame_${frameNum}_delay-0.05s.webp`;
-      img.crossOrigin = 'anonymous';
+        img.onload = () => {
+          if (isMounted) {
+            loadedCount++;
+            setLoadProgress((loadedCount / (TOTAL_SAMPLED - 1)) * 100);
 
-      img.onload = () => {
-        if (isMounted) {
-          loadedCount++;
-          setLoadProgress((loadedCount / TOTAL_SAMPLED) * 100);
-          if (loadedCount === TOTAL_SAMPLED) {
-            setIsPreloading(false);
-            // Draw the first frame
-            drawFrame(0);
+            // If the user has scrolled to this frame while it was loading, draw it now
+            if (currentFrameRef.current === i) {
+              drawFrame(i);
+            }
           }
-        }
-      };
+        };
 
-      img.onerror = () => {
-        if (isMounted) {
-          loadedCount++;
-          if (loadedCount === TOTAL_SAMPLED) {
-            setIsPreloading(false);
-            drawFrame(0);
+        img.onerror = () => {
+          if (isMounted) {
+            loadedCount++;
           }
-        }
-      };
+        };
 
-      images.push(img);
-    }
+        images[i] = img;
+      }
+    };
 
+    const firstImg = new Image();
+    firstImg.src = `/split_frames/frame_000_delay-0.05s.webp`;
+    firstImg.crossOrigin = 'anonymous';
+
+    firstImg.onload = () => {
+      if (isMounted) {
+        setIsPreloading(false);
+        drawFrame(0);
+        loadRemainingFrames();
+      }
+    };
+
+    firstImg.onerror = () => {
+      if (isMounted) {
+        setIsPreloading(false);
+        loadRemainingFrames();
+      }
+    };
+
+    images[0] = firstImg;
     stateRef.current.images = images;
 
     return () => {
