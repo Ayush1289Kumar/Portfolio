@@ -2,6 +2,8 @@
 
 A modern, interactive, and visually engaging personal portfolio built with Next.js, React, Tailwind CSS, and Framer Motion. This portfolio showcases projects and skills using dynamic scroll animations and a sleek user interface.
 
+> **🌐 Live Demo**: [https://ayushkumar1289.netlify.app/](https://ayushkumar1289.netlify.app/)
+
 ## 🚀 Features
 
 - **Next.js 15+ App Router**: Built with the latest Next.js features for optimal performance and SEO.
