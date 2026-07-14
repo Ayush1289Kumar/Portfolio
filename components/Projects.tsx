@@ -2,22 +2,40 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const projects = [
   {
-    title: 'PORTFOLIO V0',
-    description: 'Interactive scroll-driven portfolio with WebP frame sequences, Framer Motion animations, and a cinematic dark theme.',
-    tags: ['Next.js', 'Framer Motion', 'Tailwind CSS'],
+    title: '01 — Personal Portfolio',
+    description: 'A modern, interactive, and visually engaging personal portfolio built with Next.js, React, Tailwind CSS, and Framer Motion. This portfolio showcases projects and skills using dynamic scroll animations and a sleek user interface.',
+    features: ['Next.js 15+ App Router', 'Framer Motion Animations', 'Cinematic Dark UI'],
+    tags: ['Next.js', 'Three.js', 'Tailwind', 'Framer Motion'],
+    image: '/Portfolio.png',
+    buttons: [
+      { label: 'Visit Website', href: 'https://ayushkumar1289.netlify.app/' },
+      { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar/Portfolio' }
+    ]
   },
   {
-    title: 'DSA PRACTICE HUB',
-    description: 'Curated collection of Data Structures & Algorithms solutions with detailed explanations and complexity analysis.',
-    tags: ['Python', 'Java', 'Algorithms'],
+    title: '02 — Friction Media',
+    description: 'A brutal, unapologetic Chrome Extension designed to break the doom-scrolling loop. Instead of gently nudging you, it actively fights back by introducing extreme sensory friction, layout inversions, and hard account bans.',
+    features: ['Extreme UI Friction', 'Strict Daily Limits', 'Shadow DOM Architecture'],
+    tags: ['Next.js', 'Tailwind', 'TypeScript'],
+    image: '/friction-media.png',
+    buttons: [
+      { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar/Friction-Media' }
+    ]
   },
   {
-    title: 'VIBE CODING LAB',
-    description: 'Experimental projects exploring the intersection of AI-assisted development and creative software engineering.',
-    tags: ['AI', 'Web Dev', 'Experimental'],
+    title: '03 — Shadow Level',
+    description: 'A gamified habit tracker inspired by the Solo Leveling anime. It transforms your daily routines into an RPG experience where completing habits earns you experience points (EXP), helps you level up, and unlocks rewards.',
+    features: ['RPG-Style Progression', 'Analytics Dashboard', 'Streak System'],
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    image: '/shadow-level.png',
+    buttons: [
+      { label: 'Live Demo', href: 'https://shadow-level-alpha.vercel.app/' },
+      { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar/Shadow-Level' }
+    ]
   },
 ];
 
@@ -66,93 +84,129 @@ export function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative"
-            >
-              {/* Glassmorphic Card */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {projects.map((project, idx) => {
+            const isHovered = hoveredIndex === idx;
+
+            return (
               <motion.div
-                className="relative p-8 rounded-2xl backdrop-blur-xl overflow-hidden"
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                onMouseEnter={() => setHoveredIndex(idx)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="group relative rounded-2xl overflow-hidden h-[550px] cursor-pointer"
                 style={{
-                  border: '1px solid rgba(217,112,48,0.08)',
-                  background:
-                    'linear-gradient(135deg, rgba(217,112,48,0.04) 0%, transparent 50%, rgba(58,106,191,0.04) 100%)',
-                  boxShadow: 'inset 0 1px 0 0 rgba(255,255,255,0.04)',
-                }}
-                whileHover={{ scale: 1.02, translateY: -8 }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 300,
-                  damping: 30,
+                  border: '1px solid rgba(255,255,255,0.05)',
+                  boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5)',
                 }}
               >
-                {/* Ambient gradient wash — intensifies on hover */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background:
-                      'linear-gradient(135deg, rgba(217,112,48,0.07) 0%, transparent 50%, rgba(58,106,191,0.07) 100%)',
-                  }}
+                {/* Background Image */}
+                <div className="absolute inset-0 w-full h-full">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out"
+                    style={{
+                      transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+                    }}
+                  />
+                  {/* Subtle top gradient for title legibility before hover */}
+                  <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/70 to-transparent pointer-events-none" />
+                </div>
+
+                {/* Dark Overlay that fades in */}
+                <motion.div
+                  className="absolute inset-0 bg-black/85 backdrop-blur-md"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isHovered ? 1 : 0 }}
+                  transition={{ duration: 0.4 }}
                 />
 
-                {/* Content */}
-                <div className="relative z-10">
-                  <h3 className="font-display text-xl font-light text-white mb-3 tracking-wide">
+                {/* Project Title */}
+                <motion.div
+                  className="absolute top-0 left-0 w-full p-8 z-10"
+                  animate={{ 
+                    y: isHovered ? -5 : 0,
+                    opacity: isHovered ? 1 : 0.9 
+                  }}
+                  transition={{ duration: 0.4, ease: 'easeOut' }}
+                >
+                  <h3 className="font-display text-3xl font-semibold text-white tracking-wide drop-shadow-xl">
                     {project.title}
                   </h3>
-                  <p className="font-sans text-sm mb-6 leading-relaxed" style={{ color: '#8a7a6a' }}>
-                    {project.description}
-                  </p>
+                </motion.div>
 
-                  {/* Tags — amber when hovered, muted steel otherwise */}
-                  <div className="flex flex-wrap gap-2">
+                {/* Content Container (Revealed on hover) */}
+                <div className="absolute inset-0 p-8 pt-28 flex flex-col justify-start z-10 pointer-events-none">
+                  {/* Description */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 15 }}
+                    transition={{ duration: 0.4, delay: 0.1 }}
+                  >
+                    <p className="font-sans text-[16px] md:text-lg mb-6 leading-relaxed text-gray-200">
+                      {project.description}
+                    </p>
+                    {project.features && (
+                      <div className="mb-6">
+                        <span className="text-sm uppercase tracking-wider font-semibold text-orange-400 mb-3 block">Key Features</span>
+                        <ul className="flex flex-col gap-2">
+                          {project.features.map((item, i) => (
+                            <li key={i} className="text-[15px] text-gray-300 flex items-center">
+                              <span className="w-1.5 h-1.5 rounded-full bg-orange-400/60 mr-3" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </motion.div>
+
+                  {/* Spacing to push buttons and tech to bottom */}
+                  <div className="mt-auto" />
+
+                  {/* Buttons */}
+                  <motion.div
+                    className="flex gap-4 mb-6 pointer-events-auto"
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 15 }}
+                    transition={{ duration: 0.4, delay: 0.2 }}
+                  >
+                    {project.buttons.map((btn, btnIdx) => (
+                      <a
+                        key={btnIdx}
+                        href={btn.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm font-semibold px-6 py-3 rounded-lg transition-all flex items-center justify-center bg-white/5 hover:bg-white/15 text-white border border-white/10 hover:border-white/20 backdrop-blur-md"
+                      >
+                        {btn.label}
+                      </a>
+                    ))}
+                  </motion.div>
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-3">
                     {project.tags.map((tag, tagIdx) => (
                       <motion.span
                         key={tagIdx}
-                        className="font-mono text-xs px-3 py-1 rounded-full transition-colors duration-300"
-                        style={{
-                          background: 'rgba(255,255,255,0.04)',
-                          border: '1px solid rgba(217,112,48,0.12)',
-                          color: hoveredIndex === idx ? '#d97030' : '#8a7a6a',
-                        }}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
+                        transition={{ duration: 0.3, delay: 0.3 + tagIdx * 0.05 }}
+                        className="font-mono text-xs px-3 py-1.5 rounded-full text-gray-200 bg-white/10 border border-white/10 shadow-sm"
                       >
                         {tag}
                       </motion.span>
                     ))}
                   </div>
                 </div>
-
-                {/* Hover glow — amber bloom */}
-                <motion.div
-                  className="absolute -inset-px rounded-2xl blur-xl -z-10"
-                  style={{
-                    background: 'linear-gradient(135deg, #d97030, #3a6abf)',
-                  }}
-                  animate={{
-                    opacity: hoveredIndex === idx ? 0.15 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
               </motion.div>
-
-              {/* Amber accent line on hover */}
-              <motion.div
-                className="absolute bottom-0 left-0 h-px origin-left"
-                style={{ background: 'linear-gradient(to right, #d97030, transparent)' }}
-                initial={{ scaleX: 0 }}
-                whileHover={{ scaleX: 1 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
