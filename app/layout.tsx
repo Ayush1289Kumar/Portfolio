@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${robotoMono.variable} ${satoshi.variable} ${jetbrainsMono.variable} ${dmSerifDisplay.variable} scroll-smooth bg-black`}>
-      <body className="antialiased bg-black text-gray-100">
+      <body className="antialiased bg-black text-gray-100" suppressHydrationWarning>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
