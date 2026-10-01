@@ -8,7 +8,7 @@ import { TextReveal } from '@/components/TextReveal';
 import { ParallaxMask } from '@/components/ParallaxMask';
 import { DownloadResume } from '@/components/DownloadResume';
 import { ScrambleLink } from '@/components/ScrambleLink';
-import { Code2, Terminal, Briefcase, Compass } from 'lucide-react';
+import { Code2, Terminal, Briefcase, Compass, Sparkles, BrainCircuit, Database, PenTool, Server, Layers, Bot, Monitor, GitBranch, LayoutTemplate, Paintbrush, Box, Cuboid, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Page() {
@@ -74,33 +74,107 @@ export default function Page() {
           >
             04 SKILLS
           </motion.p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto w-full">
+            {/* Bento Box: Languages */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300"
+            >
               <h3 className="font-display text-2xl font-medium text-white mb-6">Languages</h3>
-              <ul className="space-y-4 font-sans text-lg" style={{ color: '#c8bdb0' }}>
-                <li>C / C++</li>
-                <li>Java</li>
-                <li>Python</li>
-                <li>JavaScript / TypeScript</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-display text-2xl font-medium text-white mb-6">Technologies</h3>
-              <ul className="space-y-4 font-sans text-lg" style={{ color: '#c8bdb0' }}>
-                <li>React / Next.js</li>
-                <li>Node.js / Express</li>
-                <li>Tailwind CSS</li>
-                <li>MongoDB / SQL</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-display text-2xl font-medium text-white mb-6">Currently Exploring</h3>
-              <ul className="space-y-4 font-sans text-lg" style={{ color: '#c8bdb0' }}>
-                <li>GSAP & Framer Motion</li>
-                <li>Three.js / WebGL</li>
-                <li>Advanced System Design</li>
-              </ul>
-            </div>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { name: 'Python', icon: Terminal },
+                  { name: 'Java', icon: Code2 },
+                  { name: 'C', icon: Code2 },
+                  { name: 'JavaScript', icon: Code2 },
+                  { name: 'HTML', icon: LayoutTemplate },
+                  { name: 'CSS', icon: Paintbrush }
+                ].map((skill, idx) => (
+                  <span key={idx} className="flex items-center gap-2 font-mono text-sm px-3 py-1.5 rounded-full bg-white/10 text-gray-200 hover:bg-orange-500/20 hover:text-orange-300 transition-colors cursor-default border border-white/5">
+                    <skill.icon size={14} />
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Bento Box: Frameworks */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300"
+            >
+              <h3 className="font-display text-2xl font-medium text-white mb-6">Frameworks</h3>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { name: 'Next.js', icon: Globe },
+                  { name: 'React', icon: Box },
+                  { name: 'Tailwind CSS', icon: Paintbrush },
+                  { name: 'Framer Motion', icon: Sparkles },
+                  { name: 'Three.js', icon: Cuboid }
+                ].map((skill, idx) => (
+                  <span key={idx} className="flex items-center gap-2 font-mono text-sm px-3 py-1.5 rounded-full bg-white/10 text-gray-200 hover:bg-blue-500/20 hover:text-blue-300 transition-colors cursor-default border border-white/5">
+                    <skill.icon size={14} />
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Bento Box: Tools */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300"
+            >
+              <h3 className="font-display text-2xl font-medium text-white mb-6">Tools</h3>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { name: 'Git & GitHub', icon: GitBranch },
+                  { name: 'VS Code', icon: Monitor },
+                  { name: 'Vercel', icon: Server },
+                  { name: 'Netlify', icon: Server },
+                  { name: 'AI Tools & LLMs', icon: Bot },
+                  { name: 'Rainmeter', icon: Layers }
+                ].map((skill, idx) => (
+                  <span key={idx} className="flex items-center gap-2 font-mono text-sm px-3 py-1.5 rounded-full bg-white/10 text-gray-200 hover:bg-emerald-500/20 hover:text-emerald-300 transition-colors cursor-default border border-white/5">
+                    <skill.icon size={14} />
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Bento Box: Exploring */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300"
+            >
+              <h3 className="font-display text-2xl font-medium text-white mb-6">Exploring</h3>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { name: 'DSA', icon: Code2 },
+                  { name: 'Full-Stack Web', icon: Database },
+                  { name: 'AI Development', icon: BrainCircuit },
+                  { name: 'Content Creation', icon: PenTool }
+                ].map((skill, idx) => (
+                  <span key={idx} className="flex items-center gap-2 font-mono text-sm px-3 py-1.5 rounded-full bg-white/10 text-gray-200 hover:bg-purple-500/20 hover:text-purple-300 transition-colors cursor-default border border-white/5">
+                    <skill.icon size={14} />
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -129,11 +203,11 @@ export default function Page() {
             What I'm Working On
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
             {[
-              { text: 'Mastering Data Structures & Algorithms', icon: Code2 },
-              { text: 'Exploring Full-Stack Web Development', icon: Terminal },
-              { text: 'Building meaningful software projects', icon: Briefcase },
+              { text: 'Mastering Data Structures & Algorithms (LeetCode daily grind)', icon: Code2 },
+              { text: 'Building full-stack web applications', icon: Terminal },
+              { text: 'Developing AI-integrated tools and assistants (Zia Assistant)', icon: Briefcase },
               { text: 'Creating educational content around programming and self-improvement', icon: Compass },
             ].map((item, idx) => (
               <motion.div
@@ -151,7 +225,7 @@ export default function Page() {
               >
                 {/* Glow effect on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#d97030]/0 to-[#d97030]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 <div className="mt-0.5 p-2 rounded-lg bg-[#d97030]/10 text-[#d97030] group-hover:scale-110 group-hover:bg-[#d97030]/20 transition-all duration-300 relative z-10">
                   <item.icon size={20} strokeWidth={1.5} />
                 </div>
@@ -193,10 +267,11 @@ export default function Page() {
             className="flex flex-wrap justify-center gap-8 group mt-16"
           >
             {[
-              { name: 'GitHub', href: 'https://github.com/Ayush1289Kumar' },
+              { name: 'GitHub (Personal)', href: 'https://github.com/Ayush1289Kumar' },
+              { name: 'GitHub (Projects)', href: 'https://github.com/zenithblaze032-cmyk' },
               { name: 'LinkedIn', href: 'https://www.linkedin.com/in/ayush-kumar-806371377/' },
-              { name: 'Instagram', href: 'https://www.instagram.com/takusan_ayaso/' },
-              { name: 'Email', href: 'mailto:takusanayaso1289@gmail.com' },
+              { name: 'Instagram', href: 'https://www.instagram.com/nova_.ayush/' },
+              { name: 'Email', href: 'mailto:ayushkumarpro1289@gmail.com' },
             ].map((link) => (
               <ScrambleLink key={link.name} href={link.href} text={link.name} />
             ))}
@@ -218,10 +293,11 @@ export default function Page() {
             </div>
             <div className="flex flex-wrap justify-center gap-6 md:gap-8 group">
               {[
-                { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar' },
+                { label: 'GitHub (Personal)', href: 'https://github.com/Ayush1289Kumar' },
+                { label: 'GitHub (Projects)', href: 'https://github.com/zenithblaze032-cmyk' },
                 { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ayush-kumar-806371377/' },
-                { label: 'Instagram', href: 'https://www.instagram.com/takusan_ayaso/' },
-                { label: 'Email', href: 'mailto:takusanayaso1289@gmail.com' },
+                { label: 'Instagram', href: 'https://www.instagram.com/nova_.ayush/' },
+                { label: 'Email', href: 'mailto:ayushkumarpro1289@gmail.com' },
               ].map((link) => (
                 <ScrambleLink key={link.label} href={link.href} text={link.label} />
               ))}

@@ -6,37 +6,69 @@ import Image from 'next/image';
 
 const projects = [
   {
-    title: '01 — Personal Portfolio',
-    description: 'A modern, interactive, and visually engaging personal portfolio built with Next.js, React, Tailwind CSS, and Framer Motion. This portfolio showcases projects and skills using dynamic scroll animations and a sleek user interface.',
-    features: ['Next.js 15+ App Router', 'Framer Motion Animations', 'Cinematic Dark UI'],
-    tags: ['Next.js', 'Three.js', 'Tailwind', 'Framer Motion'],
-    image: '/Portfolio.png',
+    title: '01 — VELOOP Rewards',
+    description: 'A luxury, fintech-grade design system and interactive feature suite. Engineered for a digital rewards platform to resolve reward conversion questions under 3 seconds.',
+    features: ['5 Interactive Banners', 'Native WebGL 3D Orb', 'Physics-based Smooth Scrolling'],
+    tags: ['React 19', 'Three.js', 'Lenis', 'Vite 7', 'Tailwind v4'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
     buttons: [
-      { label: 'Visit Website', href: 'https://ayushkumar1289.netlify.app/' },
-      { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar/Portfolio' }
+      { label: 'Live Demo', href: 'https://veloop-rewards-ayush.netlify.app/' },
+      { label: 'GitHub', href: 'https://github.com/zenithblaze032-cmyk/veloop-rewards-ayush' }
     ]
   },
   {
-    title: '02 — Friction Media',
-    description: 'A brutal, unapologetic Chrome Extension designed to break the doom-scrolling loop. Instead of gently nudging you, it actively fights back by introducing extreme sensory friction, layout inversions, and hard account bans.',
-    features: ['Extreme UI Friction', 'Strict Daily Limits', 'Shadow DOM Architecture'],
-    tags: ['Next.js', 'Tailwind', 'TypeScript'],
-    image: '/friction-media.png',
+    title: '02 — SatQuery (PrithviQ AI)',
+    description: 'A multimodal AI tool that allows users to upload satellite images, ask questions in plain English, and receive answers with map-based verification.',
+    features: ['Multimodal AI', 'Map-based Verification', 'Disaster Response Use Cases'],
+    tags: ['Python', 'TypeScript', 'JavaScript'],
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
     buttons: [
-      { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar/Friction-Media' }
+      { label: 'Live Demo', href: 'https://satquery-iota.vercel.app' },
+      { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar/SatQuery' }
     ]
   },
   {
     title: '03 — Shadow Level',
-    description: 'A gamified habit tracker inspired by the Solo Leveling anime. It transforms your daily routines into an RPG experience where completing habits earns you experience points (EXP), helps you level up, and unlocks rewards.',
-    features: ['RPG-Style Progression', 'Analytics Dashboard', 'Streak System'],
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    image: '/shadow-level.png',
+    description: 'Gamified daily habit tracker inspired by Solo Leveling. Completing habits grants EXP, levels you up from E-Rank to S-Rank, and summons shadow units.',
+    features: ['RPG Progression System', 'Analytics Dashboard', 'Streak Tracking'],
+    tags: ['React', 'TypeScript', 'Tailwind'],
+    image: 'https://images.unsplash.com/photo-1614624532983-4ce03382d63d?q=80&w=2068&auto=format&fit=crop',
     buttons: [
-      { label: 'Live Demo', href: 'https://shadow-level-alpha.vercel.app/' },
-      { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar/Shadow-Level' }
+      { label: 'Live Demo', href: 'https://shadow-level-iota.vercel.app/' },
+      { label: 'GitHub', href: 'https://github.com/zenithblaze032-cmyk/Shadow-Level' }
     ]
   },
+  {
+    title: '04 — Zia Personal Assistant',
+    description: 'A blazingly fast, hybrid AI-powered voice and system assistant built exclusively for Windows. Integrates natural language with OS automation.',
+    features: ['Local + Cloud LLM Routing', 'OS Automation', 'Natural Language Commands'],
+    tags: ['Python', 'AI / LLMs'],
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop',
+    buttons: [
+      { label: 'GitHub', href: 'https://github.com/zenithblaze032-cmyk/Zia-Personal-Assistant' }
+    ]
+  },
+  {
+    title: '05 — Interactive 3D Portfolio',
+    description: 'A modern, interactive, 3D personal developer portfolio featuring project showcases, skills matrix, dynamic scroll animations, and a cinematic dark UI.',
+    features: ['Cinematic Dark UI', '3D Interactive Canvas', 'Scroll Animations'],
+    tags: ['Next.js 15+', 'Three.js', 'Framer Motion'],
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop',
+    buttons: [
+      { label: 'Live Demo', href: 'https://portfolio-ayushkumar.vercel.app/' },
+      { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar/Portfolio' }
+    ]
+  },
+  {
+    title: '06 — CBSE Result Analyzer',
+    description: 'A client-side web application for parsing and analyzing CBSE Class XII result gazettes. Computes percentages, Performance Index, and subject stats.',
+    features: ['Client-Side Processing', 'Data Visualization', 'No Backend Required'],
+    tags: ['JavaScript', 'HTML', 'CSS'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    buttons: [
+      { label: 'GitHub', href: 'https://github.com/zenithblaze032-cmyk/CBSE_RESULT_ANALYZER' }
+    ]
+  }
 ];
 
 export function Projects() {
@@ -109,6 +141,7 @@ export function Projects() {
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 ease-out"
                     style={{
                       transform: isHovered ? 'scale(1.05)' : 'scale(1)',
