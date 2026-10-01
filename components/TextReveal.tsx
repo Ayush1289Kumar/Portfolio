@@ -26,8 +26,8 @@ export function TextReveal({ children, className = '' }: { children: string, cla
         },
         opacity: 1,
         y: 0,
-        stagger: 0.05,
-        duration: 0.8,
+        stagger: 0.015,
+        duration: 0.4,
         ease: 'power3.out'
       }
     );
