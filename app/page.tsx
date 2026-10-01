@@ -5,7 +5,6 @@ import { Overlay } from '@/components/Overlay';
 import { Projects } from '@/components/Projects';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import { TextReveal } from '@/components/TextReveal';
-import { ParallaxMask } from '@/components/ParallaxMask';
 import { DownloadResume } from '@/components/DownloadResume';
 import { ScrambleLink } from '@/components/ScrambleLink';
 import { Code2, Terminal, Briefcase, Compass, Sparkles, BrainCircuit, Database, PenTool, Server, Layers, Bot, Monitor, GitBranch, LayoutTemplate, Paintbrush, Box, Cuboid, Globe } from 'lucide-react';
