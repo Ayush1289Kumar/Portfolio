@@ -4,8 +4,12 @@ import { ScrollyCanvas } from '@/components/ScrollyCanvas';
 import { Overlay } from '@/components/Overlay';
 import { Projects } from '@/components/Projects';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
-import { motion } from 'framer-motion';
+import { TextReveal } from '@/components/TextReveal';
+import { ParallaxMask } from '@/components/ParallaxMask';
+import { DownloadResume } from '@/components/DownloadResume';
+import { ScrambleLink } from '@/components/ScrambleLink';
 import { Code2, Terminal, Briefcase, Compass } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Page() {
   const { containerRef, scrollYProgress } = useScrollProgress();
@@ -49,16 +53,9 @@ export default function Page() {
             >
               Who I Am
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-sans text-lg leading-relaxed"
-              style={{ color: '#c8bdb0' }}
-            >
+            <TextReveal className="font-sans text-lg md:text-xl leading-relaxed text-[#c8bdb0]">
               I'm a Software Engineering student driven by curiosity and disciplined learning. Beyond writing code, I'm fascinated by the intersection of technology, philosophy, fitness, and personal growth. I enjoy building projects, exploring new technologies, and documenting my journey, not because I've reached the destination, but because I believe the process itself is worth sharing.
-            </motion.p>
+            </TextReveal>
           </div>
         </div>
       </section>
@@ -77,58 +74,33 @@ export default function Page() {
           >
             04 SKILLS
           </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Languages */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <h3 className="font-display text-xl font-semibold text-white mb-4">Languages</h3>
-              <ul className="space-y-2">
-                {['Python', 'Java', 'C'].map((item) => (
-                  <li key={item} className="font-sans flex items-center gap-2" style={{ color: '#c8bdb0' }}>
-                    <span style={{ color: '#d97030' }}>•</span> {item}
-                  </li>
-                ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl">
+            <div>
+              <h3 className="font-display text-2xl font-medium text-white mb-6">Languages</h3>
+              <ul className="space-y-4 font-sans text-lg" style={{ color: '#c8bdb0' }}>
+                <li>C / C++</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>JavaScript / TypeScript</li>
               </ul>
-            </motion.div>
-
-            {/* Tools */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h3 className="font-display text-xl font-semibold text-white mb-4">Tools</h3>
-              <ul className="space-y-2">
-                {['Git', 'GitHub', 'VS Code', 'AI Tools'].map((item) => (
-                  <li key={item} className="font-sans flex items-center gap-2" style={{ color: '#c8bdb0' }}>
-                    <span style={{ color: '#3a6abf' }}>•</span> {item}
-                  </li>
-                ))}
+            </div>
+            <div>
+              <h3 className="font-display text-2xl font-medium text-white mb-6">Technologies</h3>
+              <ul className="space-y-4 font-sans text-lg" style={{ color: '#c8bdb0' }}>
+                <li>React / Next.js</li>
+                <li>Node.js / Express</li>
+                <li>Tailwind CSS</li>
+                <li>MongoDB / SQL</li>
               </ul>
-            </motion.div>
-
-            {/* Currently Exploring */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <h3 className="font-display text-xl font-semibold text-white mb-4">Currently Exploring</h3>
-              <ul className="space-y-2">
-                {['Data Structures & Algorithms', 'Web Development', 'Vibe Coding'].map((item) => (
-                  <li key={item} className="font-sans flex items-center gap-2" style={{ color: '#c8bdb0' }}>
-                    <span style={{ color: '#d97030' }}>•</span> {item}
-                  </li>
-                ))}
+            </div>
+            <div>
+              <h3 className="font-display text-2xl font-medium text-white mb-6">Currently Exploring</h3>
+              <ul className="space-y-4 font-sans text-lg" style={{ color: '#c8bdb0' }}>
+                <li>GSAP & Framer Motion</li>
+                <li>Three.js / WebGL</li>
+                <li>Advanced System Design</li>
               </ul>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -206,23 +178,19 @@ export default function Page() {
           >
             Let's Build Something Together
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-sans text-lg leading-relaxed max-w-2xl mx-auto mb-12"
-            style={{ color: '#c8bdb0' }}
-          >
-            Whether it's collaboration, opportunities, or simply discussing ideas, my inbox is always open.
-          </motion.p>
+          <div className="flex flex-col items-center gap-12">
+            <TextReveal className="font-sans text-lg md:text-xl leading-relaxed max-w-2xl mx-auto text-center" style={{ color: '#c8bdb0' }}>
+              Whether it's collaboration, opportunities, or simply discussing ideas, my inbox is always open.
+            </TextReveal>
+            <DownloadResume />
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-8 group"
+            className="flex flex-wrap justify-center gap-8 group mt-16"
           >
             {[
               { name: 'GitHub', href: 'https://github.com/Ayush1289Kumar' },
@@ -230,15 +198,7 @@ export default function Page() {
               { name: 'Instagram', href: 'https://www.instagram.com/takusan_ayaso/' },
               { name: 'Email', href: 'mailto:takusanayaso1289@gmail.com' },
             ].map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono text-sm tracking-[0.05em] transition-all duration-300 text-[#6a5a4a] group-hover:blur-[2px] group-hover:opacity-40 hover:!blur-none hover:!opacity-100 hover:!text-[#d97030] hover:scale-110 drop-shadow-none hover:drop-shadow-[0_0_8px_rgba(217,112,48,0.8)]"
-              >
-                {link.name}
-              </a>
+              <ScrambleLink key={link.name} href={link.href} text={link.name} />
             ))}
           </motion.div>
         </div>
@@ -263,15 +223,7 @@ export default function Page() {
                 { label: 'Instagram', href: 'https://www.instagram.com/takusan_ayaso/' },
                 { label: 'Email', href: 'mailto:takusanayaso1289@gmail.com' },
               ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-sm tracking-[0.05em] transition-all duration-300 text-[#6a5a4a] group-hover:blur-[2px] group-hover:opacity-40 hover:!blur-none hover:!opacity-100 hover:!text-[#d97030] hover:scale-110 drop-shadow-none hover:drop-shadow-[0_0_8px_rgba(217,112,48,0.8)]"
-                >
-                  {link.label}
-                </a>
+                <ScrambleLink key={link.label} href={link.href} text={link.label} />
               ))}
             </div>
           </div>
