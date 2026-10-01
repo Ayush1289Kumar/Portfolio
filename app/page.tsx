@@ -252,7 +252,7 @@ export default function Page() {
             Let's Build Something Together
           </motion.h2>
           <div className="flex flex-col items-center gap-12">
-            <TextReveal className="font-sans text-lg md:text-xl leading-relaxed max-w-2xl mx-auto text-center" style={{ color: '#c8bdb0' }}>
+            <TextReveal className="font-sans text-lg md:text-xl leading-relaxed max-w-2xl mx-auto text-center text-[#c8bdb0]">
               Whether it's collaboration, opportunities, or simply discussing ideas, my inbox is always open.
             </TextReveal>
             <DownloadResume />

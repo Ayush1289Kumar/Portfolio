@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const projects = [
@@ -10,7 +10,7 @@ const projects = [
     description: 'A luxury, fintech-grade design system and interactive feature suite. Engineered for a digital rewards platform to resolve reward conversion questions under 3 seconds.',
     features: ['5 Interactive Banners', 'Native WebGL 3D Orb', 'Physics-based Smooth Scrolling'],
     tags: ['React 19', 'Three.js', 'Lenis', 'Vite 7', 'Tailwind v4'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    images: ['/Projects Gallery/Veloop_rewards (1).png', '/Projects Gallery/Veloop_rewards (2).png', '/Projects Gallery/Veloop_rewards (3).png'],
     buttons: [
       { label: 'Live Demo', href: 'https://veloop-rewards-ayush.netlify.app/' },
       { label: 'GitHub', href: 'https://github.com/zenithblaze032-cmyk/veloop-rewards-ayush' }
@@ -21,7 +21,7 @@ const projects = [
     description: 'A multimodal AI tool that allows users to upload satellite images, ask questions in plain English, and receive answers with map-based verification.',
     features: ['Multimodal AI', 'Map-based Verification', 'Disaster Response Use Cases'],
     tags: ['Python', 'TypeScript', 'JavaScript'],
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
+    images: ['/Projects Gallery/PrithviQ (1).png', '/Projects Gallery/PrithviQ (2).png', '/Projects Gallery/PrithviQ (3).png'],
     buttons: [
       { label: 'Live Demo', href: 'https://satquery-iota.vercel.app' },
       { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar/SatQuery' }
@@ -32,7 +32,7 @@ const projects = [
     description: 'Gamified daily habit tracker inspired by Solo Leveling. Completing habits grants EXP, levels you up from E-Rank to S-Rank, and summons shadow units.',
     features: ['RPG Progression System', 'Analytics Dashboard', 'Streak Tracking'],
     tags: ['React', 'TypeScript', 'Tailwind'],
-    image: 'https://images.unsplash.com/photo-1614624532983-4ce03382d63d?q=80&w=2068&auto=format&fit=crop',
+    images: ['/Projects Gallery/Shadow_Level (1).png', '/Projects Gallery/Shadow_Level (2).png', '/Projects Gallery/Shadow_Level (3).png', '/Projects Gallery/Shadow_Level (4).png', '/Projects Gallery/Shadow_Level (5).png'],
     buttons: [
       { label: 'Live Demo', href: 'https://shadow-level-iota.vercel.app/' },
       { label: 'GitHub', href: 'https://github.com/zenithblaze032-cmyk/Shadow-Level' }
@@ -43,7 +43,7 @@ const projects = [
     description: 'A blazingly fast, hybrid AI-powered voice and system assistant built exclusively for Windows. Integrates natural language with OS automation.',
     features: ['Local + Cloud LLM Routing', 'OS Automation', 'Natural Language Commands'],
     tags: ['Python', 'AI / LLMs'],
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop',
+    images: ['/Projects Gallery/zia.jpg'],
     buttons: [
       { label: 'GitHub', href: 'https://github.com/zenithblaze032-cmyk/Zia-Personal-Assistant' }
     ]
@@ -53,7 +53,7 @@ const projects = [
     description: 'A modern, interactive, 3D personal developer portfolio featuring project showcases, skills matrix, dynamic scroll animations, and a cinematic dark UI.',
     features: ['Cinematic Dark UI', '3D Interactive Canvas', 'Scroll Animations'],
     tags: ['Next.js 15+', 'Three.js', 'Framer Motion'],
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop',
+    images: ['/Projects Gallery/Portfolio.png'],
     buttons: [
       { label: 'Live Demo', href: 'https://portfolio-ayushkumar.vercel.app/' },
       { label: 'GitHub', href: 'https://github.com/Ayush1289Kumar/Portfolio' }
@@ -64,15 +64,154 @@ const projects = [
     description: 'A client-side web application for parsing and analyzing CBSE Class XII result gazettes. Computes percentages, Performance Index, and subject stats.',
     features: ['Client-Side Processing', 'Data Visualization', 'No Backend Required'],
     tags: ['JavaScript', 'HTML', 'CSS'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    images: ['/Projects Gallery/CBSE (1).png', '/Projects Gallery/CBSE (2).png', '/Projects Gallery/CBSE (3).png'],
     buttons: [
       { label: 'GitHub', href: 'https://github.com/zenithblaze032-cmyk/CBSE_RESULT_ANALYZER' }
     ]
   }
 ];
 
+function ProjectCard({ project, idx }: { project: any, idx: number }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
+
+  // Automatic slideshow effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (project.images.length > 1) {
+      interval = setInterval(() => {
+        setCurrentImageIdx((prev) => (prev + 1) % project.images.length);
+      }, 3000); // 3 seconds per slide (adjust as needed)
+    }
+    return () => clearInterval(interval);
+  }, [isHovered, project.images.length]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: idx * 0.1 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="group relative rounded-2xl overflow-hidden h-[550px] cursor-pointer"
+      style={{
+        border: '1px solid rgba(255,255,255,0.05)',
+        boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5)',
+      }}
+    >
+      {/* Background Image Slideshow */}
+      <div className="absolute inset-0 w-full h-full bg-[#0a0a0a]">
+        {project.images.map((imgSrc: string, i: number) => (
+          <Image
+            key={imgSrc}
+            src={imgSrc}
+            alt={`${project.title} - Image ${i + 1}`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-all duration-1000 ease-in-out"
+            style={{
+              opacity: currentImageIdx === i ? 1 : 0,
+              transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+              zIndex: currentImageIdx === i ? 1 : 0
+            }}
+          />
+        ))}
+        {/* Subtle top gradient for title legibility before hover */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/70 to-transparent pointer-events-none z-10" />
+      </div>
+
+      {/* Dark Overlay that fades in */}
+      <motion.div
+        className="absolute inset-0 bg-black/85 backdrop-blur-md z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isHovered ? 1 : 0 }}
+        transition={{ duration: 0.4 }}
+      />
+
+      {/* Project Title */}
+      <motion.div
+        className="absolute top-0 left-0 w-full p-8 z-20"
+        animate={{ 
+          y: isHovered ? -5 : 0,
+          opacity: isHovered ? 1 : 0.9 
+        }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+      >
+        <h3 className="font-display text-3xl font-semibold text-white tracking-wide drop-shadow-xl">
+          {project.title}
+        </h3>
+      </motion.div>
+
+      {/* Content Container (Revealed on hover) */}
+      <div className="absolute inset-0 p-8 pt-28 flex flex-col justify-start z-20 pointer-events-none">
+        {/* Description */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 15 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+        >
+          <p className="font-sans text-[16px] md:text-lg mb-6 leading-relaxed text-gray-200">
+            {project.description}
+          </p>
+          {project.features && (
+            <div className="mb-6">
+              <span className="text-sm uppercase tracking-wider font-semibold text-orange-400 mb-3 block">Key Features</span>
+              <ul className="flex flex-col gap-2">
+                {project.features.map((item: string, i: number) => (
+                  <li key={i} className="text-[15px] text-gray-300 flex items-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-400/60 mr-3" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </motion.div>
+
+        {/* Spacing to push buttons and tech to bottom */}
+        <div className="mt-auto" />
+
+        {/* Buttons */}
+        <motion.div
+          className="flex gap-4 mb-6 pointer-events-auto"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 15 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
+          {project.buttons.map((btn: any, btnIdx: number) => (
+            <a
+              key={btnIdx}
+              href={btn.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm font-semibold px-6 py-3 rounded-lg transition-all flex items-center justify-center bg-white/5 hover:bg-white/15 text-white border border-white/10 hover:border-white/20 backdrop-blur-md"
+            >
+              {btn.label}
+            </a>
+          ))}
+        </motion.div>
+
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-3">
+          {project.tags.map((tag: string, tagIdx: number) => (
+            <motion.span
+              key={tagIdx}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
+              transition={{ duration: 0.3, delay: 0.3 + tagIdx * 0.05 }}
+              className="font-mono text-xs px-3 py-1.5 rounded-full text-gray-200 bg-white/10 border border-white/10 shadow-sm"
+            >
+              {tag}
+            </motion.span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export function Projects() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <section className="relative z-0 overflow-hidden px-6 md:px-8 py-16 md:py-24">
@@ -117,129 +256,9 @@ export function Projects() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {projects.map((project, idx) => {
-            const isHovered = hoveredIndex === idx;
-
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                onMouseEnter={() => setHoveredIndex(idx)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                className="group relative rounded-2xl overflow-hidden h-[550px] cursor-pointer"
-                style={{
-                  border: '1px solid rgba(255,255,255,0.05)',
-                  boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5)',
-                }}
-              >
-                {/* Background Image */}
-                <div className="absolute inset-0 w-full h-full">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-out"
-                    style={{
-                      transform: isHovered ? 'scale(1.05)' : 'scale(1)',
-                    }}
-                  />
-                  {/* Subtle top gradient for title legibility before hover */}
-                  <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/70 to-transparent pointer-events-none" />
-                </div>
-
-                {/* Dark Overlay that fades in */}
-                <motion.div
-                  className="absolute inset-0 bg-black/85 backdrop-blur-md"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: isHovered ? 1 : 0 }}
-                  transition={{ duration: 0.4 }}
-                />
-
-                {/* Project Title */}
-                <motion.div
-                  className="absolute top-0 left-0 w-full p-8 z-10"
-                  animate={{ 
-                    y: isHovered ? -5 : 0,
-                    opacity: isHovered ? 1 : 0.9 
-                  }}
-                  transition={{ duration: 0.4, ease: 'easeOut' }}
-                >
-                  <h3 className="font-display text-3xl font-semibold text-white tracking-wide drop-shadow-xl">
-                    {project.title}
-                  </h3>
-                </motion.div>
-
-                {/* Content Container (Revealed on hover) */}
-                <div className="absolute inset-0 p-8 pt-28 flex flex-col justify-start z-10 pointer-events-none">
-                  {/* Description */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 15 }}
-                    transition={{ duration: 0.4, delay: 0.1 }}
-                  >
-                    <p className="font-sans text-[16px] md:text-lg mb-6 leading-relaxed text-gray-200">
-                      {project.description}
-                    </p>
-                    {project.features && (
-                      <div className="mb-6">
-                        <span className="text-sm uppercase tracking-wider font-semibold text-orange-400 mb-3 block">Key Features</span>
-                        <ul className="flex flex-col gap-2">
-                          {project.features.map((item, i) => (
-                            <li key={i} className="text-[15px] text-gray-300 flex items-center">
-                              <span className="w-1.5 h-1.5 rounded-full bg-orange-400/60 mr-3" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </motion.div>
-
-                  {/* Spacing to push buttons and tech to bottom */}
-                  <div className="mt-auto" />
-
-                  {/* Buttons */}
-                  <motion.div
-                    className="flex gap-4 mb-6 pointer-events-auto"
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 15 }}
-                    transition={{ duration: 0.4, delay: 0.2 }}
-                  >
-                    {project.buttons.map((btn, btnIdx) => (
-                      <a
-                        key={btnIdx}
-                        href={btn.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-sm font-semibold px-6 py-3 rounded-lg transition-all flex items-center justify-center bg-white/5 hover:bg-white/15 text-white border border-white/10 hover:border-white/20 backdrop-blur-md"
-                      >
-                        {btn.label}
-                      </a>
-                    ))}
-                  </motion.div>
-
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-3">
-                    {project.tags.map((tag, tagIdx) => (
-                      <motion.span
-                        key={tagIdx}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
-                        transition={{ duration: 0.3, delay: 0.3 + tagIdx * 0.05 }}
-                        className="font-mono text-xs px-3 py-1.5 rounded-full text-gray-200 bg-white/10 border border-white/10 shadow-sm"
-                      >
-                        {tag}
-                      </motion.span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+          {projects.map((project, idx) => (
+            <ProjectCard key={idx} project={project} idx={idx} />
+          ))}
         </div>
       </div>
     </section>
